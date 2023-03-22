@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            UsingSwitchCase.switchCase();
+            TotalWages.employeeWages();
         }
     }
 }
