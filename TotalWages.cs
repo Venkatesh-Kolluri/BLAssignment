@@ -12,47 +12,41 @@ namespace EmployeeManagement
         {
             int WAGE_PER_HR = 20;
 
-            int IS_FULL_TIME = 1;
-            int IS_PART_TIME = 2;
-            int TOTAL_WORKING_DAY = 20;
-            int TOTAL_WORKING_HRS = 100;
+            const int IS_FULL_TIME = 1;
+            const int IS_PART_TIME = 2;
+            const int TOTAL_WORKING_DAY = 20;
+            const int TOTAL_WORKING_HRS = 100;
 
-            int emphrs = 0;
+            int empHrs = 0;
             int totalEmpHrs = 0;
             int totalWorkingDays = 0;
+            int employeeWages = 0;
+            int totalEmpWage = 0;
 
             while (totalWorkingDays < TOTAL_WORKING_DAY && totalEmpHrs <= TOTAL_WORKING_HRS)
             {
                 totalWorkingDays++;
                 Random random = new Random();
                 int empCheck = random.Next(0, 3);
-                if (empCheck == IS_FULL_TIME)
+                switch (empCheck)
                 {
-                    emphrs = 8;
-                    totalEmpHrs += emphrs;
-
+                    case IS_FULL_TIME:
+                        empHrs = 8;
+                        break;
+                    case IS_PART_TIME:
+                        empHrs = 4;
+                        break;
+                    default:
+                        empHrs = 0;
+                        break;
                 }
-                else if (empCheck == IS_PART_TIME)
-                {
-                    emphrs = 4;
-                    totalEmpHrs += emphrs;
-
-                }
-                else
-                {
-                    emphrs = 0;
-                    totalEmpHrs += emphrs;
-
-                }
-
-
+                employeeWages = empHrs * WAGE_PER_HR;
+                Console.WriteLine("Day:" + employeeWages);
+                totalEmpWage += employeeWages;
 
             }
-            int totalEmpWage = totalEmpHrs * WAGE_PER_HR;
-            Console.WriteLine("Day:" + totalWorkingDays + " Emp hrs: " + totalEmpHrs);
-
+           
             Console.WriteLine("Total Emp Wage: " + totalEmpWage);
-
 
         }
     }
