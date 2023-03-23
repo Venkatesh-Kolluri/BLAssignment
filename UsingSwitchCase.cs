@@ -11,8 +11,8 @@ namespace EmployeeManagement
         public static void switchCase()
         {
             int WAGE_PER_HR = 20;
-            int IS_FULL_TIME = 1;
-            int IS_PART_TIME = 2;
+            const int IS_FULL_TIME = 1;
+            const int IS_PART_TIME = 2;
             int empHrs = 0;
             int empWage = 0;
 
