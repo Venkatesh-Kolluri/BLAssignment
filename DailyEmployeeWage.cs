@@ -11,22 +11,24 @@ namespace EmployeeManagement
         public static void getEmployeeWage()
         {
             int WAGE_PER_HR = 20;
-            int FULL_DAY_HR = 8;
             int IS_FULL_TIME = 1;
+            int emphr = 0;
             Random random = new Random();
 
-            int empCheck = random.Next(0, 3);
+            int empCheck = random.Next(0, 2);
 
             if (empCheck == IS_FULL_TIME)
             {
-                int Daily_Wage = WAGE_PER_HR * FULL_DAY_HR;
-                Console.WriteLine("Employee is Present and his Daily Wage is " + Daily_Wage + " rupees");
+                emphr = 8;
 
             }
             else
             {
-                Console.WriteLine("Employee is absent and his Daily Wage is 0 rupees");
+                emphr = 0;
             }
+
+            int Daily_Wage = WAGE_PER_HR * emphr;
+            Console.WriteLine("Employee Daily Wage is " + Daily_Wage + " rupees");
 
 
         }
