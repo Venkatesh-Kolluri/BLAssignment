@@ -15,9 +15,10 @@ namespace EmployeeManagement
             int PART_TIME_HR = 4;
             int IS_FULL_TIME = 1;
             int IS_PART_TIME = 2;
+            int IS_ABSENT = 0;           
             Random random = new Random();
 
-            int empCheck = random.Next(0, 4);
+            int empCheck = random.Next(0, 3);
 
             if (empCheck == IS_FULL_TIME)
             {
@@ -33,6 +34,7 @@ namespace EmployeeManagement
             }
             else
             {
+                int Absent_Wage = WAGE_PER_HR * IS_ABSENT;
                 Console.WriteLine("Employee is absent and employees's wage is 0 rupees");
             }
         }
