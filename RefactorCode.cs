@@ -46,7 +46,7 @@
         }
        static void Main(string[] args)
         {
-            RefactorCode.employeeWages();
+            employeeWages();
            
         }
     }
